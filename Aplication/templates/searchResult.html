@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block contentChanges %}
+
+    <br>
+    <p style="text-align: center; color: black;">Resultado de nuestra búsqueda: </p>
+
+    {% if students %}
+
+    <ul>
+
+        {% for student in students %}
+            <p style="text-align: center;">Nombre: {{student.name}}, Apellido: {{student.surname}}, Edad: {{student.age}}, Celular: {{student.phone}}</p>   
+        {% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+{% endblock %}

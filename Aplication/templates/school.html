@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block contentChanges %}
+
+    <h1 style="color: black;">School form</h1>
+
+    {% if form.errors %}
+
+    <p style="color: red;">Algún dato está mal, reingrese.</p>
+
+    {% endif %}
+
+    <form action="school" method="POST">{% csrf_token %}
+
+        
+        <table>
+
+            {{ form.as_table }}
+
+        </table>
+
+        <input type="submit" value="Send">
+
+    </form>
+
+{% endblock %}
+    
